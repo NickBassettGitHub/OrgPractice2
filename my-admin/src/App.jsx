@@ -1,5 +1,15 @@
-import MyAdmin from "./admin";
+import * as React from "react";
+import { Admin, Resource } from 'react-admin';
+import simpleRestProvider from 'ra-data-simple-rest';
 
-const App = () => <MyAdmin />;
+import { PostList } from './posts';
+
+const dataProvider = simpleRestProvider('http://path.to.my.api/');
+
+const App = () => (
+    <Admin dataProvider={dataProvider}>
+        <Resource name="posts" list={PostList} />
+    </Admin>
+);
 
 export default App;
