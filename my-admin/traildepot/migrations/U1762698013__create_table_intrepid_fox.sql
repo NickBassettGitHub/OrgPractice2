@@ -1,0 +1,4 @@
+CREATE TABLE "intrepid_fox" (
+    'id' INTEGER PRIMARY KEY NOT NULL,
+    'new_1' TEXT NOT NULL
+) STRICT;

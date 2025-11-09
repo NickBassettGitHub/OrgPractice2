@@ -1,10 +1,11 @@
-import * as React from "react";
 import { Admin, Resource } from 'react-admin';
-import simpleRestProvider from 'ra-data-simple-rest';
+import { createTrailbaseProvider } from 'my-admin/ra-trailbase.js';
 
-import { PostList } from './posts';
+//import { PostList } from './posts';
 
-const dataProvider = simpleRestProvider('http://path.to.my.api/');
+const TRAILBASE_URL = 'https://studious-space-invention-v6gjrvg64jj62jp-4000.app.github.dev/'
+const { dataProvider, authProvider} = await createTrailbaseProvider(TRAILBASE_URL);
+//const simpleRestProvider  = dataProvider('http://path.to.my.api/');
 
 const App = () => (
     <Admin dataProvider={dataProvider}>
